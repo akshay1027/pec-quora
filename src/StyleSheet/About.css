@@ -1,0 +1,291 @@
+:root {
+  --background1: rgb(12, 17, 24);
+  --background2: rgba(13, 18, 26, 0.994);
+  --textcolour: rgb(253, 246, 246);
+  --secondarycolor: #3cd097;
+  --secondarycolorBlue: #10dac1;
+  --secondarycolorDarkerBlue: #10dad7;
+  --secondarycolorPurple: rgb(120, 98, 179);
+  --secondarytext: #3cd097;
+}
+
+#about {
+  scroll-behavior: smooth;
+}
+
+.main__content #brand {
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 3rem;
+  margin-top: 5rem;
+  background-image: linear-gradient(
+    to left,
+    var(--secondarycolorBlue) 0%,
+    var(--secondarycolor) 100%
+  );
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+  text-transform: uppercase;
+  margin-bottom: 0rem;
+  width: 100%;
+}
+
+.main {
+  background-color: var(--background1);
+  padding: 20px 4rem;
+}
+
+.responsive {
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+}
+.redirect {
+  border: none;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 4px 2px;
+  outline: none;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  background-color: var(--secondarycolorBlue);
+  color: black;
+  font-weight: 800;
+}
+
+.redirect:hover {
+  background-color: rgb(226, 228, 237);
+  color: black;
+}
+
+.main__content h2 {
+  margin-top: 5rem;
+  font-size: 2rem;
+  background: var(--secondarycolorBlue); /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    var(--secondarycolorBlue),
+    #10dae1
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    var(--secondarycolorBlue),
+    #10dae1
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+
+.main-img-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+
+.illustration {
+  margin-top: 5rem;
+  width: 90%;
+  height: fit-content;
+}
+
+.illustration2 {
+  width: 80%;
+  height: fit-content;
+}
+
+/* ============= card css begins ================= */
+
+.row {
+  background-color: var(--background1);
+  padding: 20px 4em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-flow: wrap;
+}
+
+.card {
+  align-items: center;
+  transition: 0.3s;
+  margin: 3px;
+  padding: 0px 30px;
+  color: var(--secondarycolorBlue);
+  font-size: 30px;
+  width: 20%;
+  background: rgb(25, 30, 36);
+  border: 2px solid;
+  margin-bottom: 50px;
+  transition: 0.3s;
+  box-shadow: 0 0 20px -10px var(--secondarycolorBlue);
+}
+
+.card-icon {
+  font-size: 120px !important;
+}
+
+.developer-icon {
+  margin-top: 20px;
+  padding: 0px 13px;
+  font-size: 40px !important;
+}
+
+.developer-icon:hover {
+  transform: scale(1.4);
+}
+
+.card-header {
+  margin-top: 25px;
+  text-align: center;
+  padding: 50px 10px;
+  background: linear-gradient(to right, var(--secondarycolorBlue), #10dae1);
+  color: var(--background1);
+}
+
+.card-body {
+  padding: 30px 20px;
+  font-size: 20px;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 40px -10px var(--secondarycolorBlue);
+}
+
+@media screen and (max-width: 1000px) {
+  .card {
+    width: 35%;
+  }
+}
+
+@media (max-width: 777px) {
+  .row {
+    padding: 20px 1.5em;
+  }
+}
+
+@media screen and (max-width: 633px) {
+  .heading {
+    padding: 20px;
+    font-size: 20px;
+  }
+
+  .card {
+    width: 70%;
+  }
+
+  .main__content h2 {
+    margin-top: 5rem;
+    font-size: 2rem;
+    background: var(--secondarycolorBlue); /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+      to right,
+      var(--secondarycolorBlue),
+      #10dae1
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, var(--secondarycolorBlue), #10dae1);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+  }
+}
+
+/* ============= card css over ================= */
+
+@media (max-width: 480px) {
+  #brand {
+    margin-top: 40px;
+    margin-bottom: -20px;
+    font-size: 1.8rem;
+  }
+  .main {
+    background-color: var(--background2);
+    padding: 20px 15px;
+  }
+
+  .main-img-container {
+    margin-left: 0rem;
+  }
+
+  .main__content h2 {
+    margin-top: 40px;
+    padding: 10px !important;
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 421px) {
+  .row {
+    padding: 20px 1.5em;
+  }
+}
+@media (max-width: 945px) and (min-width: 737px) {
+  #hero {
+    margin-left: 8rem;
+  }
+}
+
+/* footer */
+
+.footer__container {
+  background-color: #131313;
+  padding: 5rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.social__media--wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  max-width: 1000px;
+  margin: 40px auto 0 auto;
+}
+
+#footer__logo {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 2rem;
+}
+
+.website__rights {
+  color: #fff;
+}
+
+@media screen and (max-width: 820px) {
+  .footer__links {
+    padding-top: 2rem;
+  }
+
+  #footer__logo {
+    margin-bottom: 2rem;
+  }
+
+  .website__rights {
+    margin-bottom: 2rem;
+  }
+
+  .footer__link--wrapper {
+    flex-direction: column;
+  }
+
+  .social__media--wrap {
+    flex-direction: column;
+  }
+}

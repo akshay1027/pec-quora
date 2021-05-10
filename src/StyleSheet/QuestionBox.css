@@ -1,0 +1,90 @@
+:root {
+  --background1: rgb(19, 31, 49);
+  --background2: rgba(13, 18, 26, 0.94);
+  --textcolour: rgb(253, 246, 246);
+  --secondaryCOlor: #10dac1;
+  --secondarycolorBlue: #10dac1;
+  --secondaryText: #10dac2;
+}
+
+.QuestionBox {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5em;
+  width: 80%;
+  margin: 0 auto;
+  outline: none;
+  border: none;
+  background: var(--background2);
+  box-shadow: 0 6px 7px 0 rgba(28, 28, 31, 0.823),
+    0 3px 6px 0 rgba(0, 0, 0, 0.19);
+  padding: 0.4em 1.5em;
+}
+
+.questionBox_user {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5em;
+  margin-top: 1.5em;
+  background: var(--background2);
+}
+
+.QuestionBox_inputfield {
+  margin-bottom: 2em;
+  border: none;
+  outline: none;
+  font-weight: 800;
+  font-size: 15px;
+  flex: 1;
+  padding: 11px;
+  border: 2px solid var(--secondaryText);
+  resize: vertical;
+  color: var(--textcolour);
+  background: var(--background2);
+}
+
+.QuestionBox_inputfield::placeholder {
+  font-weight: 100;
+  padding: 4px;
+  background: var(--background2);
+  color: rgb(174, 174, 174);
+}
+
+.QuestionBox_inputField {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--background2);
+  color: var(--textcolour);
+}
+
+.user_username {
+  margin-left: 0.7em;
+  color: var(--secondaryText);
+}
+
+.QuestionBox__btn {
+  width: 8.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2em;
+  outline: none;
+  font-weight: 900;
+  border: 2px solid var(--secondaryText);
+  padding: 1em;
+  border-radius: 7px;
+  color: var(--background);
+  background: var(--secondaryCOlor);
+  transition-duration: 0.6s;
+}
+
+@media (max-width: 500px) {
+  .QuestionBox__btn {
+    padding: 9px;
+  }
+}
+.QuestionBox__btn:hover {
+  color: var(--background2);
+  transform: scale(1.1);
+}
