@@ -62,7 +62,7 @@ export default function SignUp() {
       form_data.append("image", image);
       
       try {
-        const response = await axios.post("/signin", form_data);
+        const response = await axios.post("https://pec-quora.herokuapp.com/signin", form_data);
         console.log(response);
         const { data, status } = response;
          

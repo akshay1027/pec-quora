@@ -82,7 +82,7 @@ export default function SignUp() {
 
         // Making http post request to backend using axios.
 
-        const response = await axios.post("/signup", form_data);
+        const response = await axios.post("https://pec-quora.herokuapp.com/signup", form_data);
         console.log(response);
 
         // Destructure data and status
