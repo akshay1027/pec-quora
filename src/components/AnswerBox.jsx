@@ -15,9 +15,7 @@ const AnswerBox = ({questionID, profileImage, authStatus, username}) => {
         form_data.append("comments", answer);
         
         try {
-        const response = await axios.post(`https://pec-quora.herokuapp.com/api/send-answer/${questionID}/`, form_data, {
-            withCredentials: true,
-        });
+        const response = await axios.post(`https://pec-quora.herokuapp.com/api/send-answer/${questionID}/`, form_data);
         
         alert(response.data.msg);
         } catch (error) {

@@ -18,7 +18,7 @@ const QuestionList = (props) => {
 
   useEffect(() => {
     axios
-      .get(`https://pec-quora.herokuapp.com/api/all-answer/${questionID}/`, { withCredentials:true })
+      .get(`https://pec-quora.herokuapp.com/api/all-answer/${questionID}/`)
       .then((response) => {
         console.log(response.data);
         setAnswer(response.data);
@@ -36,7 +36,7 @@ const QuestionList = (props) => {
     data.append("id", ID);
 
     axios
-      .post(`https://pec-quora.herokuapp.com/api/answers/likes/${questionID}/`, data, { withCredentials: true })
+      .post(`https://pec-quora.herokuapp.com/api/answers/likes/${questionID}/`, data)
       .then((response) => {
         console.log(response);
       })

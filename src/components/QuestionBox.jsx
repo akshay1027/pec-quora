@@ -12,9 +12,7 @@ const QuestionBox = ({profileImage, authStatus, username}) => {
         form_data.append("question", question);
      
         try {
-        const response = await axios.post("https://pec-quora.herokuapp.com/api/ask-question", form_data, {
-            withCredentials: true,
-        });
+        const response = await axios.post("https://pec-quora.herokuapp.com/api/ask-question", form_data);
         
         alert(response.data.msg);
         } catch (error) {

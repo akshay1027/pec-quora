@@ -82,9 +82,7 @@ export default function SignUp() {
 
         // Making http post request to backend using axios.
 
-        const response = await axios.post("/signup", form_data, {
-          withCredentials: true,
-        });
+        const response = await axios.post("/signup", form_data);
         console.log(response);
 
         // Destructure data and status

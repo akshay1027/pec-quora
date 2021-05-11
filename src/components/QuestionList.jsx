@@ -15,7 +15,7 @@ const QuestionList = () => {
   useEffect(() => {
 
     axios
-      .get("https://pec-quora.herokuapp.com/api/all-questions", { withCredentials:true })
+      .get("https://pec-quora.herokuapp.com/api/all-questions")
       .then((response) => {
         console.log(response);
         setQuestions(response.data);
@@ -30,7 +30,7 @@ const QuestionList = () => {
     data.append("id", ID);
 
     axios
-      .post(url, data, { withCredentials: true })
+      .post(url, data)
       .then((response) => {
         console.log(response);
       })

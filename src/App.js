@@ -26,7 +26,7 @@ const App = () =>  {
 
   useEffect(()=>{
     axios
-        .get("/isLoggedIn", {withCredentials: true})
+        .get("/isLoggedIn")
         .then((response)=>{
             setAuthStatus(response.data.authStatus);
             setProfileImage(response.data.profileImage);

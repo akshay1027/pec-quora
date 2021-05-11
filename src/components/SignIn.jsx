@@ -62,9 +62,7 @@ export default function SignUp() {
       form_data.append("image", image);
       
       try {
-        const response = await axios.post("/signin", form_data, {
-          withCredentials: true,
-        });
+        const response = await axios.post("/signin", form_data);
         console.log(response);
         const { data, status } = response;
          
