@@ -26,7 +26,7 @@ const App = () =>  {
 
   useEffect(()=>{
     axios
-        .get("/isLoggedIn")
+        .get("https://pec-quora.herokuapp.com/api/all-answer/isLoggedIn")
         .then((response)=>{
             setAuthStatus(response.data.authStatus);
             setProfileImage(response.data.profileImage);
