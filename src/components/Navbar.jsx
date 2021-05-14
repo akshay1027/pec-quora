@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import MenuIcon from '@material-ui/icons/Menu';
+import MenuIcon from "@material-ui/icons/Menu";
 import "../StyleSheet/NavBar.css";
 
 function NavBar() {
@@ -25,6 +25,17 @@ function NavBar() {
                 onClick={handleClick}
               >
                 Quora
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                exact
+                to="/find"
+                activeClassName="active"
+                className="nav-links"
+                onClick={handleClick}
+              >
+                Find
               </NavLink>
             </li>
             <li className="nav-item">
@@ -57,12 +68,14 @@ function NavBar() {
                 className="nav-links"
                 onClick={handleClick}
               >
-              Sign Up
+                Sign Up
               </NavLink>
             </li>
           </ul>
           <div className="nav-icon" onClick={handleClick}>
-            <i className={click ? "fas fa-times" : "fas fa-bars"}><MenuIcon style={{fontSize: "30px", marginTop:"3px"}}/></i>
+            <i className={click ? "fas fa-times" : "fas fa-bars"}>
+              <MenuIcon style={{ fontSize: "30px", marginTop: "3px" }} />
+            </i>
           </div>
         </div>
       </nav>

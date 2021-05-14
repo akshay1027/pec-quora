@@ -1,18 +1,18 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, Suspense} from "react";
 import './App.css';
-import QuestionBox from "./components/QuestionBox";
-import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
-import SignUp from "./components/SignUp";
-import SignIn from "./components/SignIn";
-import NavBar from "./components/Navbar"
-import QuesstionList from "./components/QuestionList";
 import axios from "axios"
-import QuestionScreen from "./components/QuestionScreen";
-import Background from "./components/Background";
-import About from "./components/about";
+import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
+const LazyQuestionBox  = React.lazy( () => import("./components/QuestionBox"));
+const LazySignUp  = React.lazy( () => import("./screens/SignUp"));
+const LazySignIn  = React.lazy( () => import("./screens/SignIn"));
+const LazyNavBar  = React.lazy( () => import("./components/Navbar"));
+const LazyQuesstionList  = React.lazy( () => import("./components/QuestionList"));
+const LazyQuestionScreen  = React.lazy( () => import("./screens/QuestionScreen"));
+const LazyBackground  = React.lazy( () => import("./components/Background"));
+const LazyAbout  = React.lazy( () => import("./screens/about"));
+const LazyFind  = React.lazy( () => import("./screens/find"));
 
 // use callbacks instead of "function App()"
-
 
 const App = () =>  {
   
@@ -26,7 +26,7 @@ const App = () =>  {
 
   useEffect(()=>{
     axios
-        .get("https://pec-quora.herokuapp.com/api/all-answer/isLoggedIn")
+        .get("/isLoggedIn")
         .then((response)=>{
             setAuthStatus(response.data.authStatus);
             setProfileImage(response.data.profileImage);
@@ -39,34 +39,40 @@ const App = () =>  {
 
   return (
     <Router className="App">
-      <NavBar profileImage={profileImage}/> {/* header will be present in all pages */}
+      <Suspense fallback={<div>Loading...</div>}>
+      <LazyNavBar profileImage={profileImage}/> {/* header will be present in all pages */}
          <Switch>
           <Route path="/signin">
-            <SignIn />
+            <LazySignIn />
           </Route>
 
           <Route path="/signup">
-            <SignUp />
+            <LazySignUp />
           </Route>
 
           <Route path="/questions/:id" render={(props) => (  
-            <QuestionScreen authStatus={authStatus} profileImage={profileImage} username={username}
+            <LazyQuestionScreen authStatus={authStatus} profileImage={profileImage} username={username}
                 {...props} />
             )} exact />
 
           <Route path="/about">
-              <About />
+              <LazyAbout />
+          </Route>
+
+          <Route path="/find">
+              <LazyFind />
           </Route>
         
           <Route path="/">
           <div style={{background:"rgba(25, 28, 31)"}}>
-            <Background />
-            <QuestionBox authStatus={authStatus} profileImage={profileImage} username={username}/>
-            <QuesstionList />
-            </div>
+            <LazyBackground />
+            <LazyQuestionBox authStatus={authStatus} profileImage={profileImage} username={username}/>
+            <LazyQuesstionList />
+          </div>
           </Route>
 
           </Switch>
+          </Suspense>
     </Router>
   );
 } 

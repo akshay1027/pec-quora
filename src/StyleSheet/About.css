@@ -2,7 +2,7 @@
   --background1: rgb(12, 17, 24);
   --background2: rgba(13, 18, 26, 0.994);
   --textcolour: rgb(253, 246, 246);
-  --secondarycolor: #3cd097;
+  --secondarycolor: #10dad7;
   --secondarycolorBlue: #10dac1;
   --secondarycolorDarkerBlue: #10dad7;
   --secondarycolorPurple: rgb(120, 98, 179);
@@ -21,7 +21,7 @@
   background-image: linear-gradient(
     to left,
     var(--secondarycolorBlue) 0%,
-    var(--secondarycolor) 100%
+    var(--textcolour) 100%
   );
   background-size: 100%;
   -webkit-background-clip: text;
@@ -184,7 +184,7 @@
 
   .main__content h2 {
     margin-top: 5rem;
-    font-size: 2rem;
+    font-size: 1.5rem;
     background: var(--secondarycolorBlue); /* fallback for old browsers */
     background: -webkit-linear-gradient(
       to right,
@@ -220,7 +220,15 @@
   .main__content h2 {
     margin-top: 40px;
     padding: 10px !important;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
+  }
+  p {
+    font-size: 18px;
+    font-weight: 550;
+  }
+
+  #brand {
+    font-size: 2rem !important;
   }
 }
 
